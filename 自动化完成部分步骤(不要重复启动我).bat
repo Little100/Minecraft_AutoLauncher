@@ -140,7 +140,7 @@ if errorlevel 1 goto STARTPCL2
 cd 客户端
 taskkill /f /t /im "Plain Craft Launcher 2.exe"
 taskkill /f /t /im "PCL2.exe"
-start "Plain Craft Launcher 2.exe"
+start cmd /k ""Plain Craft Launcher 2.exe""
 timeout /t 0.5 /nobreak >nul
 msg * 现在你需要点击“开始游戏” tips:如果你没有显示账号请登录你在开头注册的账号
 :END
@@ -150,7 +150,7 @@ choice /C:Y /M "选择Y继续"
 if errorlevel 1 STARTP2P
 :STARTP2P
 taskkill /f /t /im "OPL_WpfApp.exe"
-start OPL_WpfApp.exe -on
+start cmd /k "OPL_WpfApp.exe" -on
 set "textToCopy=127.0.0.1:25565"
 where clip >nul 2>&1
 echo %textToCopy% | clip
